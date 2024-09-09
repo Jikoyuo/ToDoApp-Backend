@@ -84,7 +84,7 @@ public class TaskController {
         Map<String, Object> response = new HashMap<>();
         try {
             Task task = taskRepository.findById(taskId).orElseThrow(() -> new Exception("Task not found"));
-            task.setTask(updatedTask.getTask()); // Update task details
+            task.setTask(updatedTask.getTask()); 
             Task savedTask = taskRepository.save(task);
             response.put("message", "Task updated successfully");
             response.put("task", savedTask);
